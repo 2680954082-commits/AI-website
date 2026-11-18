@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shenzhen Yaduoyi Technology Co., Ltd. | FFU & Cleanroom Equipment Manufacturer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0265d6',
+                            700: '#0349b4',
+                            800: '#073990',
+                            900: '#0c275e',
+                            dark: '#071120',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, rgba(7, 17, 32, 0.94) 0%, rgba(12, 39, 94, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .shadow-glow {
+            box-shadow: 0 0 25px rgba(2, 132, 199, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Announcement & Quick Contact Bar -->
+    <div class="bg-brand-dark text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-certificate text-emerald-400"></i> ISO9001:2015 & CE Certified Cleanroom Systems</span>
+                <span class="hidden sm:inline-block text-slate-600">|</span>
+                <span class="hidden sm:flex items-center gap-1.5"><i class="fa-solid fa-wind text-brand-500"></i> Cleanroom Class 10 - 100,000 (ISO 4 - ISO 8)</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="mailto:linda@yaduoyi.com" class="hover:text-white transition-colors flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <i class="fa-solid fa-envelope"></i> linda@yaduoyi.com
+                </a>
+                <a href="tel:+8613823152513" class="hover:text-white transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-brand-500"></i> Direct: +86-13823152513
+                </a>
+                <a href="https://wa.me/8613823152513" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-emerald-500"></i> WhatsApp (Linda Wang)
+                </a>
+                <div class="flex items-center gap-1 text-slate-400">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="font-medium text-white">EN</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar (Sticky) -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 bg-brand-700 rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-md group-hover:bg-brand-600 transition-colors">
+                        YDY
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-brand-900 block leading-tight">YADUOYI</span>
+                        <span class="text-[10px] tracking-widest text-slate-500 font-semibold uppercase block">Cleanroom & Air Purification Equipment</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center gap-8 font-medium text-slate-700 text-sm">
+                    <a href="#home" class="hover:text-brand-600 transition-colors py-2 border-b-2 border-brand-600 text-brand-700 font-semibold">Home</a>
+                    <a href="#products" class="hover:text-brand-600 transition-colors py-2 border-b-2 border-transparent">Cleanroom Products</a>
+                    <a href="#configurator" class="hover:text-brand-600 transition-colors py-2 border-b-2 border-transparent">FFU Calculator</a>
+                    <a href="#applications" class="hover:text-brand-600 transition-colors py-2 border-b-2 border-transparent">Industry Applications</a>
+                    <a href="#about" class="hover:text-brand-600 transition-colors py-2 border-b-2 border-transparent">About Us</a>
+                    <a href="#contact" class="hover:text-brand-600 transition-colors py-2 border-b-2 border-transparent">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden sm:flex items-center gap-4">
+                    <button onclick="openRfqModal('General RFQ')" class="bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane text-xs"></i> Get a Free Quote
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-slate-700 hover:text-brand-600 p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-brand-700 bg-brand-50">Home</a>
+            <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Cleanroom Products</a>
+            <a href="#configurator" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">FFU Configurator</a>
+            <a href="#applications" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Applications</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">About Us</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact Us</a>
+            <button onclick="openRfqModal('Mobile RFQ')" class="w-full mt-4 bg-brand-600 text-white font-semibold py-3 rounded-lg shadow text-center">
+                Get a Free Quote
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="gradient-hero text-white relative py-20 lg:py-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-brand-500/20 border border-brand-400/30 px-3.5 py-1.5 rounded-full text-brand-300 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Direct OEM/ODM Cleanroom Equipment Manufacturer
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Leading Cleanroom Equipment & Air Purification Solutions
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Shenzhen Yaduoyi Technology Co., Ltd. provides high-efficiency Fan Filter Units (FFU), Cleanroom Air Showers, Laminar Flow Clean Benches, and HEPA Filtration Systems engineered for Semiconductor, Pharma, and Biotech facilities worldwide.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <button onclick="openRfqModal('Hero Cleanroom RFQ')" class="bg-brand-500 hover:bg-brand-600 text-white px-7 py-3.5 rounded-xl font-bold text-base shadow-lg hover:shadow-glow transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-file-invoice-dollar"></i> Request Instant Quotation
+                        </button>
+                        <a href="#configurator" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-7 py-3.5 rounded-xl font-semibold text-base transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-sliders"></i> FFU Spec Configurator
+                        </a>
+                    </div>
+
+                    <!-- Trust Metrics Grid -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-700/60 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">99.999%</div>
+                            <div class="text-xs text-slate-400">ULPA Filter Efficiency</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-brand-400">ISO 1-8</div>
+                            <div class="text-xs text-slate-400">Cleanroom Compliance</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-extrabold text-white">50+</div>
+                            <div class="text-xs text-slate-400">Exporting Countries</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Contact Card / Quick RFQ -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl border border-slate-100">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900">Direct Cleanroom Inquiry</h3>
+                                <p class="text-xs text-slate-500">Email: <a href="mailto:linda@yaduoyi.com" class="text-brand-600 font-semibold hover:underline">linda@yaduoyi.com</a></p>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 font-bold">
+                                <i class="fa-solid fa-wind"></i>
+                            </span>
+                        </div>
+                        <form id="heroQuickForm" onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Equipment Needed</label>
+                                <select class="w-full px-3 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none">
+                                    <option>Fan Filter Units (FFU) - EC/AC Motor</option>
+                                    <option>Cleanroom Air Shower (风淋室)</option>
+                                    <option>Laminar Flow Clean Bench</option>
+                                    <option>Cleanroom Pass Box & Transfer Window</option>
+                                    <option>HEPA / ULPA Filters & Diffusers</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Work Email</label>
+                                <input type="email" required placeholder="name@company.com" class="w-full px-3 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Required Quantity & Specs</label>
+                                <textarea rows="3" placeholder="Specify unit size (e.g., 1175x575mm FFU), airflow volume, or cleanroom level..." class="w-full px-3 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3 rounded-lg shadow-md transition-all flex justify-center items-center gap-2">
+                                Send Inquiry to Linda Wang <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATION & COMPLIANCE BANNER -->
+    <section class="bg-white py-6 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center text-center opacity-90">
+                <div class="flex items-center justify-center gap-3 text-slate-700 font-semibold text-sm">
+                    <i class="fa-solid fa-shield-halved text-2xl text-brand-600"></i> ISO9001:2015 Certified
+                </div>
+                <div class="flex items-center justify-center gap-3 text-slate-700 font-semibold text-sm">
+                    <i class="fa-solid fa-certificate text-2xl text-brand-600"></i> CE Compliance Certified
+                </div>
+                <div class="flex items-center justify-center gap-3 text-slate-700 font-semibold text-sm">
+                    <i class="fa-solid fa-fan text-2xl text-emerald-600"></i> EN1822 HEPA/ULPA Test
+                </div>
+                <div class="flex items-center justify-center gap-3 text-slate-700 font-semibold text-sm">
+                    <i class="fa-solid fa-truck-fast text-2xl text-brand-600"></i> Global Express & DDP Air/Sea
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE PRODUCTS SHOWCASE (FFU, Air Shower, Clean Bench, HEPA) -->
+    <section id="products" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full">Core Product Line</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">High-Performance Cleanroom Equipment</h2>
+                <p class="text-slate-600 mt-3">Engineered to fulfill ISO 14644-1 cleanroom standards. Custom dimensions, material options (Galvalume, Stainless Steel, Aluminum), and smart group control available.</p>
+            </div>
+
+            <!-- Product Category Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1: FFU -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Fan Filter Unit FFU" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Flagship Product</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Fan Filter Units (FFU)</h3>
+                            <p class="text-slate-600 text-xs mb-4">Self-contained ceiling air filtration units with direct-driven fan & HEPA/ULPA filters.</p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Efficiency: 99.99% @ 0.3μm / 99.999% @ 0.12μm</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Motor: High-efficiency EC or AC Motor</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Low Noise: 46 - 52 dBA</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Sizes: 1175x575mm, 1175x1175mm, Custom</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <button onclick="openRfqModal('Fan Filter Unit (FFU)')" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold rounded-lg transition-all text-center">
+                                Request FFU Pricing
+                            </button>
+                            <button onclick="downloadSpecSheet('FFU-Spec-Yaduoyi.pdf')" class="w-full py-2 border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download text-xs"></i> Download Data Sheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Air Shower -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=800&q=80" alt="Cleanroom Air Shower" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Personnel & Cargo</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Cleanroom Air Showers (风淋室)</h3>
+                            <p class="text-slate-600 text-xs mb-4">High-velocity air jet chambers designed to remove surface dust particles from personnel or goods before entering cleanrooms.</p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Nozzle Velocity: 20 - 25 m/s</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Types: Single, Double, Tunnel / Cargo Air Shower</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Material: SUS304 Stainless / Powder Coated</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Auto Sensor & Electronic Interlocking Doors</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <button onclick="openRfqModal('Cleanroom Air Shower')" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold rounded-lg transition-all text-center">
+                                Request Air Shower Quote
+                            </button>
+                            <button onclick="downloadSpecSheet('Air-Shower-Spec-Yaduoyi.pdf')" class="w-full py-2 border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download text-xs"></i> Download Data Sheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Clean Bench -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="Laminar Flow Clean Bench" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">ISO Class 5 Working Area</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Laminar Flow Clean Benches</h3>
+                            <p class="text-slate-600 text-xs mb-4">Vertical and Horizontal laminar airflow workstations for sterile medical, lab, and microelectronics assembly.</p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Airflow: Vertical / Horizontal Laminar</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Filter: HEPA H14 (99.995% efficiency)</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Features: UV Sterilization Lamp & LED Light</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Touchscreen Microprocessor Control</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <button onclick="openRfqModal('Clean Bench Workstation')" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold rounded-lg transition-all text-center">
+                                Request Clean Bench Quote
+                            </button>
+                            <button onclick="downloadSpecSheet('Clean-Bench-Spec-Yaduoyi.pdf')" class="w-full py-2 border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download text-xs"></i> Download Data Sheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Pass Box & HEPA Filter Outlets -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80" alt="Cleanroom Pass Box & HEPA Box" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brand-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Accessories & Units</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Pass Boxes & HEPA Filter Outlets</h3>
+                            <p class="text-slate-600 text-xs mb-4">Transfer windows with electronic/mechanical interlocking and terminal HEPA filter diffuser boxes.</p>
+                            <ul class="text-xs text-slate-600 space-y-2 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Pass Box: Dynamic / Static Interlock</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> HEPA Units: Terminal Gel-Seal & Gasket Box</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Filters: H13/H14 HEPA, U15 ULPA Filters</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-brand-600"></i> Housing: SUS304 / Electro-Galvanized Steel</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <button onclick="openRfqModal('Pass Box & Terminal HEPA Outlets')" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold rounded-lg transition-all text-center">
+                                Request Accessories Quote
+                            </button>
+                            <button onclick="downloadSpecSheet('Cleanroom-Accessories-Yaduoyi.pdf')" class="w-full py-2 border border-slate-300 text-slate-600 hover:bg-slate-100 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-download text-xs"></i> Download Data Sheet
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FFU & CLEANROOM SPECIFICATION CONFIGURATOR -->
+    <section id="configurator" class="py-20 bg-brand-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-brand-400 uppercase tracking-widest bg-brand-500/20 px-3 py-1 rounded-full border border-brand-400/30">
+                        Interactive B2B Tool
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-white">Cleanroom FFU Quantity & Airflow Calculator</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Estimate the number of Fan Filter Units (FFU) required for your cleanroom project based on target ISO cleanliness level, ceiling area, and ceiling height.
+                    </p>
+                    <div class="p-4 bg-slate-800/80 rounded-xl border border-slate-700 space-y-3">
+                        <div class="flex items-center gap-3 text-xs text-slate-300">
+                            <i class="fa-solid fa-calculator text-brand-400 text-base"></i> Instant air exchange rate estimation
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-slate-300">
+                            <i class="fa-solid fa-network-wired text-brand-400 text-base"></i> Supporting Group Centralized Control Systems (RS485/Modbus)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-2xl">
+                    <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-brand-600"></i> FFU Project Estimator
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Cleanroom Area (m²)</label>
+                            <input type="number" id="calcArea" value="100" min="10" oninput="calculateFFU()" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Ceiling Height (m)</label>
+                            <input type="number" id="calcHeight" value="2.8" step="0.1" min="2" oninput="calculateFFU()" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">Target Cleanroom Class</label>
+                            <select id="calcClass" onchange="calculateFFU()" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-brand-500">
+                                <option value="100">ISO Class 5 (Class 100)</option>
+                                <option value="1000" selected>ISO Class 6 (Class 1,000)</option>
+                                <option value="10000">ISO Class 7 (Class 10,000)</option>
+                                <option value="100000">ISO Class 8 (Class 100,000)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">FFU Unit Size Standard</label>
+                            <select id="calcSize" onchange="calculateFFU()" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 outline-none focus:ring-2 focus:ring-brand-500">
+                                <option value="1000">Standard 1175 x 575 mm (Airflow ~1000 m³/h)</option>
+                                <option value="2000">Large 1175 x 1175 mm (Airflow ~2000 m³/h)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Calculation Results Box -->
+                    <div class="bg-brand-50 border border-brand-200 rounded-xl p-5 mb-6 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div>
+                            <div class="text-xs text-slate-500">Estimated FFUs Needed</div>
+                            <div class="text-2xl font-extrabold text-brand-700" id="resFfuCount">18 Units</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-500">Ceiling Coverage</div>
+                            <div class="text-2xl font-extrabold text-slate-800" id="resCoverage">12.5%</div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1">
+                            <div class="text-xs text-slate-500">Target Air Changes</div>
+                            <div class="text-2xl font-extrabold text-slate-800" id="resAirChanges">60 - 90 ACH</div>
+                        </div>
+                    </div>
+
+                    <button onclick="requestConfiguredRfq()" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3 rounded-lg shadow transition-all flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Send Configured Specification to Linda Wang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRY APPLICATIONS -->
+    <section id="applications" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full">Target Industries</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">Cleanroom Solutions Across High-Tech Sectors</h2>
+                <p class="text-slate-600 mt-3">Providing tailored cleanroom equipment for stringent contamination-control environments.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition-all text-center">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Semiconductor & Optics</h3>
+                    <p class="text-xs text-slate-600">ISO Class 3-5 cleanrooms equipped with ULPA FFUs for wafer fabrication and precision optical lens assembly.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition-all text-center">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Pharma & BioTech</h3>
+                    <p class="text-xs text-slate-600">GMP compliant air showers, sterile clean benches, and dynamic pass boxes preventing cross-contamination.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition-all text-center">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Food Processing & Packaging</h3>
+                    <p class="text-xs text-slate-600">Air filtration modules and personnel air showers ensuring aseptic food manufacturing lines.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-500 transition-all text-center">
+                    <div class="w-14 h-14 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Solar & Photovoltaic</h3>
+                    <p class="text-xs text-slate-600">High-volume dust-free air circulation systems optimized for solar cell production workshops.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US & FACTORY STRENGTH -->
+    <section id="about" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80" alt="Yaduoyi Cleanroom Manufacturing Workshop" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-100 px-3 py-1 rounded-full">Factory Strength</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Shenzhen Yaduoyi Technology Co., Ltd.</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        With over 15 years of specialization in cleanroom air purification technology, Yaduoyi Technology operates advanced sheet metal CNC bending, automatic laser welding, and ISO 5 HEPA filter assembly workshops in Shenzhen.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-3 bg-white rounded-xl border border-slate-200">
+                            <div class="text-xl font-bold text-brand-700">12,000 m²</div>
+                            <div class="text-xs text-slate-500">Production Workshop</div>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl border border-slate-200">
+                            <div class="text-xl font-bold text-brand-700">100% Tested</div>
+                            <div class="text-xs text-slate-500">EN1822 Airflow & Leak Test</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & DIRECT INQUIRY SECTION -->
+    <section id="contact" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Contact Info Card -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Contact Sales</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Get Cleanroom Technical Support</h2>
+                        <p class="text-slate-600 mt-3 text-sm">Send us your cleanroom CAD layout or equipment specifications for instant engineering quotes.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold shrink-0">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Export Account Manager</div>
+                                <div class="text-lg font-bold text-slate-900">Linda Wang</div>
+                                <div class="text-xs text-brand-600 font-semibold">Cleanroom Equipment Division</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold shrink-0">
+                                <i class="fa-solid fa-envelope text-brand-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Official Email Address</div>
+                                <a href="mailto:linda@yaduoyi.com" class="text-base font-bold text-slate-900 hover:text-brand-600 transition-colors">linda@yaduoyi.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold shrink-0">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Direct Telephone & WhatsApp</div>
+                                <a href="tel:+8613823152513" class="text-base font-bold text-slate-900 hover:text-brand-600 transition-colors">+86-13823152513</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold shrink-0">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">WhatsApp Direct Line</div>
+                                <a href="https://wa.me/8613823152513" target="_blank" class="text-base font-bold text-emerald-600 hover:underline">+86-13823152513 (Instant Online)</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center text-xl font-bold shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-500 font-medium">Factory Location</div>
+                                <div class="text-sm font-semibold text-slate-900">High-Tech Industrial Zone, Bao'an District, Shenzhen, Guangdong, China</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Interactive RFQ Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-lg">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Request Technical RFQ</h3>
+                        <p class="text-xs text-slate-500 mb-8">Upload specs or cleanroom drawings for immediate engineering pricing.</p>
+
+                        <form id="mainContactForm" onsubmit="handleMainFormSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+                                    <input type="text" required placeholder="Full Name" class="w-full px-4 py-3 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none bg-white">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Company Name</label>
+                                    <input type="text" placeholder="Company Ltd." class="w-full px-4 py-3 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none bg-white">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-700 mb-1">Required Equipment / Quantity</label>
+                                    <input type="text" id="formEquipment" placeholder="e.g. 50 Units FFU 1175x575 EC Motor" class="w-full px-4 py-3 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none bg-white">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Project Requirements / Cleanroom Level *</label>
+                                <textarea id="formMessage" rows="4" required placeholder="Describe dimensions, target cleanroom class (ISO 5-8), frame material preference..." class="w-full px-4 py-3 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none bg-white"></textarea>
+                            </div>
+
+                            <div class="border-2 border-dashed border-slate-300 hover:border-brand-500 transition-colors rounded-xl p-6 text-center cursor-pointer bg-white" onclick="document.getElementById('fileInput').click()">
+                                <input type="file" id="fileInput" class="hidden" onchange="updateFileName(this)">
+                                <i class="fa-solid fa-cloud-arrow-up text-3xl text-brand-600 mb-2"></i>
+                                <div class="text-sm font-semibold text-slate-700" id="fileNameDisplay">Attach Cleanroom Layout / CAD / PDF Files</div>
+                                <div class="text-xs text-slate-400 mt-1">Supports DWG, ZIP, PDF, STEP (Max 50MB)</div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-base flex justify-center items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Submit RFQ to Linda Wang
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-slate-400 py-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-brand-700 rounded-lg flex items-center justify-center text-white font-bold text-lg">
+                            YDY
+                        </div>
+                        <span class="text-lg font-bold tracking-tight text-white">Shenzhen Yaduoyi Technology Co., Ltd.</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed pr-6">
+                        Leading manufacturer of Fan Filter Units (FFU), Cleanroom Air Showers, Laminar Flow Clean Benches, and Terminal HEPA Filtration Systems in Shenzhen, China. ISO9001 & CE Certified.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Cleanroom Equipment</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#products" class="hover:text-white transition-colors">Fan Filter Units (FFU)</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Air Showers (风淋室)</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Clean Benches</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Pass Boxes & Transfer Windows</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">HEPA / ULPA Air Filters</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#configurator" class="hover:text-white transition-colors">FFU Quantity Calculator</a></li>
+                        <li><a href="#applications" class="hover:text-white transition-colors">Industry Applications</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">Factory QC Standards</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact Sales Team</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Direct Contacts</h4>
+                    <ul class="space-y-2.5 text-xs">
+                        <li class="text-white font-semibold">Linda Wang</li>
+                        <li><a href="mailto:linda@yaduoyi.com" class="text-emerald-400 hover:underline"><i class="fa-solid fa-envelope mr-1"></i> linda@yaduoyi.com</a></li>
+                        <li>Tel/Mobile: +86-13823152513</li>
+                        <li>WhatsApp: +86-13823152513</li>
+                        <li>Shenzhen, Guangdong, China</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <div>
+                    © <span id="year"></span> Shenzhen Yaduoyi Technology Co., Ltd. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP RFQ MODAL -->
+    <div id="rfqModal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100">
+            <button onclick="closeRfqModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="mb-6">
+                <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">Inquiry Form</span>
+                <h3 class="text-xl font-bold text-slate-900 mt-1" id="modalTitle">Request Cleanroom Quote</h3>
+                <p class="text-xs text-slate-500">Contact: Linda Wang | Email: <a href="mailto:linda@yaduoyi.com" class="text-brand-600 font-semibold hover:underline">linda@yaduoyi.com</a> | +86-13823152513</p>
+            </div>
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Full Name" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Corporate Email *</label>
+                    <input type="email" required placeholder="email@company.com" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Cleanroom Equipment Requirements</label>
+                    <textarea rows="3" required placeholder="State required FFU sizes, Air Shower dimensions, or cleanroom level..." class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-700 hover:bg-brand-800 text-white font-bold py-3 rounded-lg shadow transition-all flex justify-center items-center gap-2">
+                    Submit Request Now <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 border border-slate-700">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <div>
+            <div class="text-sm font-bold" id="toastTitle">Success!</div>
+            <div class="text-xs text-slate-300" id="toastMessage">Your inquiry has been dispathed to Linda Wang.</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FFU Calculator Logic
+        function calculateFFU() {
+            const area = parseFloat(document.getElementById('calcArea').value) || 0;
+            const height = parseFloat(document.getElementById('calcHeight').value) || 2.8;
+            const cleanClass = document.getElementById('calcClass').value;
+            const ffuCap = parseFloat(document.getElementById('calcSize').value) || 1000;
+
+            const volume = area * height;
+            let ach = 60; // Air Changes per Hour
+            let coverageRatio = 0.15;
+
+            if (cleanClass === "100") {
+                ach = 250;
+                coverageRatio = 0.60;
+            } else if (cleanClass === "1000") {
+                ach = 80;
+                coverageRatio = 0.25;
+            } else if (cleanClass === "10000") {
+                ach = 35;
+                coverageRatio = 0.15;
+            } else if (cleanClass === "100000") {
+                ach = 20;
+                coverageRatio = 0.08;
+            }
+
+            const totalAirflowNeeded = volume * ach;
+            const ffuCount = Math.ceil(totalAirflowNeeded / ffuCap);
+            const actualCoverage = ((ffuCount * (ffuCap === 1000 ? 0.67 : 1.38)) / area * 100).toFixed(1);
+
+            document.getElementById('resFfuCount').textContent = `${ffuCount} Units`;
+            document.getElementById('resCoverage').textContent = `${actualCoverage}%`;
+            document.getElementById('resAirChanges').textContent = `${ach} ACH`;
+        }
+
+        function requestConfiguredRfq() {
+            const count = document.getElementById('resFfuCount').textContent;
+            const cleanClass = document.getElementById('calcClass').options[document.getElementById('calcClass').selectedIndex].text;
+            const area = document.getElementById('calcArea').value;
+            
+            document.getElementById('formEquipment').value = `${count} Fan Filter Units (FFU)`;
+            document.getElementById('formMessage').value = `Project Details: Cleanroom Area ${area} m², Target Level: ${cleanClass}. Estimated requirement: ${count}.`;
+            
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast('Calculated Specs Filled', 'Scroll down to submit your project specification to Linda Wang.');
+        }
+
+        function downloadSpecSheet(filename) {
+            showToast('Download Started', `Downloading official technical datasheet (${filename})...`);
+        }
+
+        function openRfqModal(context) {
+            if (context) {
+                document.getElementById('modalTitle').textContent = `RFQ - ${context}`;
+            }
+            document.getElementById('rfqModal').classList.remove('hidden');
+        }
+
+        function closeRfqModal() {
+            document.getElementById('rfqModal').classList.add('hidden');
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastTitle').textContent = title;
+            document.getElementById('toastMessage').textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            showToast('Inquiry Dispatched', 'Linda Wang (+86-13823152513) will provide pricing shortly.');
+            e.target.reset();
+        }
+
+        function handleMainFormSubmit(e) {
+            e.preventDefault();
+            showToast('RFQ Received', 'Thank you! Our cleanroom engineering team in Shenzhen is processing your request.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeRfqModal();
+            showToast('Inquiry Sent', 'Your message was delivered to Linda Wang.');
+            e.target.reset();
+        }
+
+        function updateFileName(input) {
+            if (input.files && input.files[0]) {
+                document.getElementById('fileNameDisplay').textContent = `Selected: ${input.files[0].name}`;
+            }
+        }
+
+        // Initialize calculation on page load
+        calculateFFU();
+    </script>
+</body>
+</html>
